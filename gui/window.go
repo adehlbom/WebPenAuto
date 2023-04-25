@@ -1,34 +1,34 @@
 package gui
 
 import (
-	"fmt"
-
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
 )
 
-func SetupMainWindow(window fyne.Window) {
-	urlEntry := widget.NewEntry()
-	urlEntry.SetPlaceHolder("Enter target URL")
+func SetupMainWindow(window fyne.Window, exportButton *widget.Button) {
+	urlEntry := NewURLInput()
 
-	output := widget.NewLabel("")
+	output := NewOutputLabel()
 
-	scanButton := widget.NewButton("Scan", func() {
-		url := urlEntry.Text
-		if url == "" {
-			output.SetText("Please enter a target URL.")
-			return
-		}
-		// Add your web app penetration testing code here.
-		output.SetText(fmt.Sprintf("Scanning URL: %s", url))
+	scanButton := NewScanButton(urlEntry, output)
+
+	sidebar := NewSidebar(func(toolName string) {
+		output.SetText("Selected tool: " + toolName)
+		// You can add code here to handle tool selection and update the main content accordingly
 	})
+	previewPanel := NewPreviewPanel()
 
-	content := container.NewVBox(
-		urlEntry,
-		scanButton,
-		widget.NewLabel("Output:"),
-		output,
+	content := container.NewBorder(
+		nil, nil, sidebar, nil,
+		container.NewVBox(
+			urlEntry,
+			scanButton,
+			widget.NewLabel("Output:"),
+			output,
+			previewPanel,
+			exportButton,
+		),
 	)
 
 	window.SetContent(content)

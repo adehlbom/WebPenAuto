@@ -14,14 +14,14 @@ To install PenTestPal, you need to have Go 1.16 or later installed on your syste
 
 ```go install github.com/adehlbom/PenTestPal@latest```
 
-Usage
+# Usage
 To start PenTestPal, simply run the following command:
 ```PenTestPal```
 
 This will start the application and display a GUI window. Currently, there is no functionality other than the GUI interface.
 
-Contributing
+# Contributing
 Contributions to PenTestPal are welcome! If you find a bug or have a feature request, please create a new issue in the GitHub repository. If you want to contribute code, please fork the repository and create a new branch for your changes. When you're ready, submit a pull request and we'll review your changes.
 
-License
+# License
 PenTestPal is licensed under the MIT License. See LICENSE for more information.

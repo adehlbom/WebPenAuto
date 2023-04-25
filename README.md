@@ -10,15 +10,13 @@ Preview and edit the PDF report content before exporting
 # Installation
 To install PenTestPal, you need to have Go 1.16 or later installed on your system. Then, you can run the following command to download and install the application:
 
-# bash
-Copy code
-go install github.com/adehlbom/PenTestPal@latest
+
+
+```go install github.com/adehlbom/PenTestPal@latest```
+
 Usage
 To start PenTestPal, simply run the following command:
-
-Copy code
-# bash
-PenTestPal
+```PenTestPal```
 
 This will start the application and display a GUI window. Currently, there is no functionality other than the GUI interface.
 
